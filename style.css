@@ -177,9 +177,8 @@ h1 {
   font-weight: 700;
 }
 
-.como-funciona,
-.formulario {
-  max-width: 820px;
+.como-funciona {
+  max-width: 900px;
   margin: 0 auto 30px;
 }
 
@@ -190,18 +189,37 @@ h1 {
   padding-left: 20px;
 }
 
-.lista-gifts {
+/* Área que coloca os gifts de um lado e o formulário do outro */
+.area-giftcards {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  max-width: 820px;
+  align-items: stretch;
+  gap: 30px;
+  max-width: 950px;
   margin: 0 auto 30px;
 }
 
+/* Os dois gift cards ficam um embaixo do outro */
+.lista-gifts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 340px;
+  max-width: 420px;
+}
+
 .gift {
-  flex: 1 1 300px;
+  width: 100%;
   cursor: pointer;
+}
+
+.formulario {
+  flex: 1 1 340px;
+  max-width: 450px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
 }
 
 .gift input {
@@ -229,23 +247,33 @@ h1 {
   display: block;
 }
 
+.formulario h3 {
+  margin-bottom: 5px;
+}
+
 .formulario label {
   display: block;
   font-size: 13px;
-  margin: 15px 0 6px;
+  margin: 14px 0 6px;
 }
 
 .formulario input,
 .formulario select,
 .formulario textarea {
   width: 100%;
-  padding: 10px 12px;
+  padding: 12px 14px;
   background-color: var(--fundo);
   border: 1px solid var(--borda);
   border-radius: 6px;
   color: var(--texto);
   font-family: inherit;
   font-size: 14px;
+}
+
+.formulario textarea {
+  flex-grow: 1;
+  min-height: 100px;
+  resize: vertical;
 }
 
 .formulario input:focus,
@@ -256,7 +284,9 @@ h1 {
 }
 
 .formulario .botao {
-  margin-top: 20px;
+  margin-top: auto;
+  padding: 12px 20px;
+  text-align: center;
 }
 
 .loja {
@@ -358,14 +388,17 @@ footer {
     -webkit-text-stroke: 1px var(--verde);
   }
 
-  .titulo {
-    font-size: 30px;
-  }
-
   .loja,
+  .area-giftcards,
   .footer-conteudo {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .lista-gifts,
+  .formulario {
+    width: 100%;
+    max-width: 100%;
   }
 
   .loja img {

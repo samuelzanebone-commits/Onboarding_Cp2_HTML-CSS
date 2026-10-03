@@ -87,48 +87,50 @@
       </ol>
     </div>
 
-    <div class="lista-gifts">
-      <label class="gift">
-        <input type="radio" name="gift" checked>
-        <div class="caixa">
-          <img src="assets/gift2.jpeg" alt="Gift Card Dark Code">
-          <h3>Das antiga</h3>
-          <p>Design Chad e minimalista, para homens de verdade.</p>
-          <span class="selecionado">Selecionado</span>
-        </div>
-      </label>
+    <div class="area-giftcards">
+      <div class="lista-gifts">
+        <label class="gift">
+          <input type="radio" name="gift" checked>
+          <div class="caixa">
+            <img src="assets/gift2.jpeg" alt="Gift Card Dark Code">
+            <h3>Das antiga</h3>
+            <p>Design Chad e minimalista, para homens de verdade.</p>
+            <span class="selecionado">Selecionado</span>
+          </div>
+        </label>
 
-      <label class="gift">
-        <input type="radio" name="gift">
-        <div class="caixa">
-          <img src="assets/gift1.jpeg" alt="Gift Card Dev Glow">
-          <h3>VibeCode</h3>
-          <p>Design coloridinho, igual um vibecoder.</p>
-          <span class="selecionado">Selecionado</span>
-        </div>
-      </label>
+        <label class="gift">
+          <input type="radio" name="gift">
+          <div class="caixa">
+            <img src="assets/gift1.jpeg" alt="Gift Card Dev Glow">
+            <h3>VibeCode</h3>
+            <p>Design coloridinho, igual um vibecoder.</p>
+            <span class="selecionado">Selecionado</span>
+          </div>
+        </label>
+      </div>
+
+      <form class="caixa formulario">
+        <h3>Enviar Gift Card</h3>
+
+        <label for="tipo">Para quem é?</label>
+        <select id="tipo">
+          <option>Para um amigo</option>
+          <option>Para mim mesmo</option>
+        </select>
+
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" placeholder="Ex: Lucas" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="amigo@email.com" required>
+
+        <label for="mensagem">Mensagem (opcional)</label>
+        <textarea id="mensagem" rows="3" placeholder="Um café pra te ajudar na sprint!"></textarea>
+
+        <button type="submit" class="botao">ENVIAR GIFT CARD</button>
+      </form>
     </div>
-
-    <form class="caixa formulario">
-      <h3>Enviar Gift Card</h3>
-
-      <label for="tipo">Para quem é?</label>
-      <select id="tipo">
-        <option>Para um amigo</option>
-        <option>Para mim mesmo</option>
-      </select>
-
-      <label for="nome">Nome</label>
-      <input type="text" id="nome" placeholder="Ex: Lucas" required>
-
-      <label for="email">E-mail</label>
-      <input type="email" id="email" placeholder="amigo@email.com" required>
-
-      <label for="mensagem">Mensagem (opcional)</label>
-      <textarea id="mensagem" rows="3" placeholder="Um café pra te ajudar na sprint!"></textarea>
-
-      <button type="submit" class="botao">ENVIAR GIFT CARD</button>
-    </form>
   </section>
 
   <section id="loja">
@@ -144,7 +146,7 @@
 
         <p><strong>Endereço:</strong> Av. Central, 67 - Centro, Santa Rita do Sapucaí - MG</p>
         <p><strong>Horário:</strong> Seg a Sex 07h às 21h | Sáb e Dom 08h às 18h</p>
-        <p><strong>Comodidades:</strong> Climatização e Wifi </p>
+        <p><strong>Comodidades:</strong> Climatização e Wi-Fi </p>
       </div>
     </div>
   </section>
