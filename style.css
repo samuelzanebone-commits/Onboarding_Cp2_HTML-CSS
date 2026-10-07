@@ -32,7 +32,6 @@ img {
   max-width: 100%;
 }
 
-/* Header & Nav */
 header {
   position: sticky;
   top: 0;
@@ -56,7 +55,6 @@ nav a {
 }
 nav a:hover { color: var(--verde); }
 
-/* Botões */
 .botao {
   display: inline-block;
   border: 1px solid var(--verde);
@@ -74,7 +72,6 @@ nav a:hover { color: var(--verde); }
   color: #000;
 }
 
-/* Seções e Caixas */
 section {
   text-align: center;
   padding: 80px 20px;
@@ -109,7 +106,6 @@ section {
   line-height: 1.5;
 }
 
-/* Home */
 #home { padding-top: 60px; }
 h1 { font-size: 64px; }
 .contorno {
@@ -124,7 +120,6 @@ h1 { font-size: 64px; }
 }
 .texto-mobile { display: none; }
 
-/* Cardápio */
 .lista-cafes {
   display: flex;
   flex-wrap: wrap;
@@ -154,7 +149,6 @@ h1 { font-size: 64px; }
   font-weight: 700;
 }
 
-/* Gift Cards */
 .como-funciona {
   display: flex;
   max-width: 1000px;
@@ -246,7 +240,6 @@ h1 { font-size: 64px; }
 .gift input:checked + .caixa .marcador { border-color: var(--verde); }
 .gift input:checked + .caixa .marcador::after { opacity: 1; }
 
-/* Formulário Gift Card */
 .formulario {
   display: flex;
   flex-direction: column;
@@ -328,7 +321,6 @@ h1 { font-size: 64px; }
   text-align: center;
 }
 
-/* Loja */
 .loja {
   display: flex;
   gap: 30px;
@@ -346,7 +338,6 @@ h1 { font-size: 64px; }
   font-weight: 500;
 }
 
-/* Footer */
 footer {
   border-top: 1px solid var(--borda);
   padding: 40px 15% 20px;
@@ -376,7 +367,6 @@ footer {
 .footer-links a:hover { color: var(--verde); }
 .direitos { text-align: center; }
 
-/* Responsivo */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
