@@ -19,11 +19,10 @@ html {
 }
 
 body {
-  background-color: var(--fundo);
+  background: var(--fundo) radial-gradient(circle at 85% 10%, var(--verde-escuro), transparent 40%) fixed;
   background-image:
     radial-gradient(circle at 85% 10%, var(--verde-escuro), transparent 40%),
     radial-gradient(circle at 10% 90%, var(--verde-escuro), transparent 40%);
-  background-attachment: fixed;
   color: var(--texto);
   font-family: 'Inter', Arial, sans-serif;
 }
@@ -33,6 +32,7 @@ img {
   max-width: 100%;
 }
 
+/* Header & Nav */
 header {
   position: sticky;
   top: 0;
@@ -43,49 +43,38 @@ header {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.logo,
-.header-direita {
-  flex: 1;
-}
-
-.header-direita {
-  text-align: right;
-}
-
-.logo img {
-  width: 28px;
-}
+.logo, .header-direita { flex: 1; }
+.header-direita { text-align: right; }
+.logo img { width: 28px; }
 
 nav a {
   color: var(--texto);
   text-decoration: none;
   font-size: 13px;
   margin: 0 15px;
+  transition: color 0.2s;
 }
+nav a:hover { color: var(--verde); }
 
-nav a:hover {
-  color: var(--verde);
-}
-
+/* Botões */
 .botao {
   display: inline-block;
   border: 1px solid var(--verde);
   border-radius: 6px;
   background: none;
   color: var(--texto);
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 500;
+  font: 500 12px inherit;
   padding: 8px 18px;
   text-decoration: none;
   cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 }
-
 .botao:hover {
   background-color: var(--verde);
-  color: #000000;
+  color: #000;
 }
 
+/* Seções e Caixas */
 section {
   text-align: center;
   padding: 80px 20px;
@@ -120,38 +109,22 @@ section {
   line-height: 1.5;
 }
 
-.caixa img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 15px;
-}
-
-#home {
-  padding-top: 60px;
-}
-
-h1 {
-  font-size: 64px;
-}
-
+/* Home */
+#home { padding-top: 60px; }
+h1 { font-size: 64px; }
 .contorno {
   font-size: 60px;
   color: transparent;
   -webkit-text-stroke: 1.5px var(--verde);
 }
-
 .copos {
   width: 90%;
   max-width: 550px;
   margin: 40px auto 0;
 }
+.texto-mobile { display: none; }
 
-.texto-mobile {
-  display: none;
-}
-
+/* Cardápio */
 .lista-cafes {
   display: flex;
   flex-wrap: wrap;
@@ -164,12 +137,16 @@ h1 {
 .cafe {
   flex: 1 1 300px;
   max-width: 400px;
+  transition: border-color 0.2s;
 }
-
-.cafe:hover {
-  border-color: var(--verde);
+.cafe:hover { border-color: var(--verde); }
+.cafe img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
 }
-
 .preco {
   display: block;
   margin-top: 15px;
@@ -177,84 +154,115 @@ h1 {
   font-weight: 700;
 }
 
+/* Gift Cards */
 .como-funciona {
-  max-width: 900px;
-  margin: 0 auto 30px;
-}
-
-.como-funciona ol {
-  color: var(--texto-cinza);
-  font-size: 14px;
-  line-height: 1.8;
-  padding-left: 20px;
-}
-
-/* Área que coloca os gifts de um lado e o formulário do outro */
-.area-giftcards {
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 30px;
-  max-width: 950px;
-  margin: 0 auto 30px;
+  max-width: 1000px;
+  margin: 0 auto 24px;
+  padding: 24px 0;
 }
 
-/* Os dois gift cards ficam um embaixo do outro */
-.lista-gifts {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  flex: 1 1 340px;
-  max-width: 420px;
+.passo {
+  flex: 1;
+  padding: 0 28px;
+  border-left: 1px solid var(--borda);
 }
-
-.gift {
-  width: 100%;
-  cursor: pointer;
-}
-
-.formulario {
-  flex: 1 1 340px;
-  max-width: 450px;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  padding: 25px;
-}
-
-.gift input {
-  display: none;
-}
-
-.gift .caixa:hover {
-  border-color: var(--texto-cinza);
-}
-
-/* cartao escolhido fica com a borda verde */
-.gift input:checked + .caixa {
-  border-color: var(--verde);
-}
-
-.selecionado {
-  display: none;
-  margin-top: 12px;
+.passo:first-child { border-left: none; }
+.passo span {
+  display: block;
+  margin-bottom: 8px;
   color: var(--verde);
   font-size: 13px;
   font-weight: 500;
 }
 
-.gift input:checked + .caixa .selecionado {
-  display: block;
+.area-giftcards {
+  display: grid;
+  grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto 30px;
 }
 
-.formulario h3 {
-  margin-bottom: 5px;
+.lista-gifts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.formulario label {
+.gift {
   display: block;
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+}
+.gift input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.gift .caixa {
+  height: 100%;
+  padding: 14px;
+  transition: border-color 0.2s;
+}
+.gift:hover .caixa { border-color: var(--texto-cinza); }
+.gift input:checked + .caixa { border-color: var(--verde); }
+.gift input:focus-visible + .caixa {
+  outline: 2px solid var(--verde);
+  outline-offset: 3px;
+}
+.gift img {
+  width: 100%;
+  border-radius: 4px;
+  object-fit: contain;
+}
+.gift-texto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 6px 4px;
+}
+.gift-texto h3 { font-size: 17px; margin-bottom: 4px; }
+
+.marcador {
+  position: relative;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--texto-cinza);
+  border-radius: 50%;
+}
+.marcador::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background-color: var(--verde);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.gift input:checked + .caixa .marcador { border-color: var(--verde); }
+.gift input:checked + .caixa .marcador::after { opacity: 1; }
+
+/* Formulário Gift Card */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+}
+.formulario h3 { font-size: 20px; }
+.formulario strong { color: var(--verde); font-weight: 500; }
+
+.escolhido-vibe { display: none; }
+.area-giftcards:has(#gift-vibe:checked) .escolhido-vibe { display: inline; }
+.area-giftcards:has(#gift-vibe:checked) .escolhido-antiga { display: none; }
+
+.formulario label, .formulario .rotulo {
+  display: block;
+  margin: 16px 0 6px;
   font-size: 13px;
-  margin: 14px 0 6px;
 }
 
 .formulario input,
@@ -266,16 +274,14 @@ h1 {
   border: 1px solid var(--borda);
   border-radius: 6px;
   color: var(--texto);
-  font-family: inherit;
+  font: inherit;
   font-size: 14px;
 }
-
 .formulario textarea {
   flex-grow: 1;
-  min-height: 100px;
+  min-height: 90px;
   resize: vertical;
 }
-
 .formulario input:focus,
 .formulario select:focus,
 .formulario textarea:focus {
@@ -283,129 +289,135 @@ h1 {
   border-color: var(--verde);
 }
 
+.valores {
+  display: flex;
+  gap: 10px;
+}
+.formulario .valor {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+}
+.formulario .valor input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.valor span {
+  display: block;
+  padding: 11px 0;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  color: var(--texto-cinza);
+  font-size: 14px;
+  text-align: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+.valor:hover span { border-color: var(--texto-cinza); }
+.valor input:checked + span {
+  border-color: var(--verde);
+  color: var(--texto);
+}
+.valor input:focus-visible + span {
+  outline: 2px solid var(--verde);
+  outline-offset: 2px;
+}
 .formulario .botao {
-  margin-top: auto;
-  padding: 12px 20px;
+  margin-top: 24px;
+  padding: 13px 20px;
   text-align: center;
 }
 
+/* Loja */
 .loja {
   display: flex;
   gap: 30px;
   max-width: 950px;
   margin: 0 auto;
 }
-
 .loja img {
   width: 45%;
   height: auto;
-  margin: 0;
+  border-radius: 6px;
 }
-
-.loja-info p {
-  margin-bottom: 12px;
-}
-
+.loja-info p { margin-bottom: 12px; }
 .loja-info strong {
   color: var(--texto);
   font-weight: 500;
 }
 
+/* Footer */
 footer {
   border-top: 1px solid var(--borda);
   padding: 40px 15% 20px;
   margin-top: 40px;
 }
-
 .footer-conteudo {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
 }
-
 .footer-logo {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
-.footer-logo img {
-  width: 24px;
-}
-
-.footer-logo p,
-.footer-links a,
-.direitos {
+.footer-logo img { width: 24px; }
+.footer-logo p, .footer-links a, .direitos {
   color: var(--texto-cinza);
   font-size: 13px;
 }
-
 .footer-links a {
   text-decoration: none;
   margin-left: 20px;
+  transition: color 0.2s;
 }
+.footer-links a:hover { color: var(--verde); }
+.direitos { text-align: center; }
 
-.footer-links a:hover {
-  color: var(--verde);
-}
-
-.direitos {
-  text-align: center;
-}
-
+/* Responsivo */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     gap: 15px;
     padding: 20px;
   }
-
-  nav a {
-    margin: 0 8px;
-  }
-
-  .desktop {
-    display: none;
-  }
+  nav a { margin: 0 8px; }
+  .desktop { display: none; }
 
   .texto-mobile {
     display: block;
     margin-bottom: 50px;
   }
-
   .texto-mobile p {
     font-size: 24px;
     margin-bottom: 25px;
   }
 
-  h1 {
-    font-size: 34px;
-  }
-
+  h1 { font-size: 34px; }
   .contorno {
     font-size: 30px;
     -webkit-text-stroke: 1px var(--verde);
   }
+  .titulo { font-size: 30px; }
 
-  .loja,
-  .area-giftcards,
-  .footer-conteudo {
+  .loja, .footer-conteudo, .como-funciona {
     flex-direction: column;
     gap: 20px;
   }
-
-  .lista-gifts,
-  .formulario {
-    width: 100%;
-    max-width: 100%;
+  .area-giftcards { grid-template-columns: 1fr; }
+  .como-funciona { padding: 20px; }
+  .passo {
+    padding: 20px 0 0;
+    border: none;
+    border-top: 1px solid var(--borda);
   }
-
-  .loja img {
-    width: 100%;
+  .passo:first-child {
+    padding-top: 0;
+    border-top: none;
   }
-
-  .footer-links a {
-    margin: 0 8px;
-  }
+  .formulario { padding: 20px; }
+  .loja img { width: 100%; }
+  .footer-links a { margin: 0 8px; }
 }

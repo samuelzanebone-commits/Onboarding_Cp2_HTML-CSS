@@ -14,14 +14,12 @@
     <div class="logo">
       <a href="#home"><img src="assets/5267474-cafe-grao-branco-icone-vetor-removebg-preview.png" alt="Logo Great Coffee"></a>
     </div>
-
     <nav>
       <a href="#home">Home</a>
       <a href="#cardapio">Cardápio</a>
       <a href="#giftcards">Gift Cards</a>
       <a href="#loja">Loja</a>
     </nav>
-
     <div class="header-direita">
       <a href="#cardapio" class="botao desktop">PEGAR SEU CAFÉ</a>
     </div>
@@ -32,10 +30,8 @@
       <p>O Café que fará seu código decolar para o próximo nível.</p>
       <a href="#cardapio" class="botao">PEGAR SEU CAFÉ</a>
     </div>
-
     <h1>Great Coffee</h1>
     <h2 class="contorno">&lt;/Great Code/&gt;</h2>
-
     <img class="copos" src="assets/c09a2e2c-0635-4150-914f-0b79c1251ee9.png" alt="Copos de cafe">
   </section>
 
@@ -68,7 +64,7 @@
       <div class="caixa cafe">
         <img src="assets/mocha.jpg" alt="Café Mocha">
         <h3>Mocha</h3>
-        <p>Café com LEITE e uma dose deliciosa de chocolate.</p>
+        <p>Café com LEITE e uma dose de chocolate.</p>
         <span class="preco">R$ 13,00</span>
       </div>
     </div>
@@ -79,54 +75,82 @@
     <p class="subtitulo">Dê um café de presente para alguém ou guarde para você</p>
 
     <div class="caixa como-funciona">
-      <h3>Como funciona</h3>
-      <ol>
-        <li>Escolha um dos dois modelos de cartão abaixo.</li>
-        <li>Diga se é para um amigo ou para você mesmo.</li>
-        <li>O código chega no e-mail e pode ser usado em qualquer café da loja.</li>
-      </ol>
+      <div class="passo">
+        <span>01</span>
+        <h3>Escolha o modelo</h3>
+        <p>Selecione um dos dois cartões disponíveis.</p>
+      </div>
+      <div class="passo">
+        <span>02</span>
+        <h3>Defina o destinatário</h3>
+        <p>Envie para um amigo ou para você mesmo.</p>
+      </div>
+      <div class="passo">
+        <span>03</span>
+        <h3>Use na loja</h3>
+        <p>O código chega por e-mail e vale em qualquer café.</p>
+      </div>
     </div>
 
     <div class="area-giftcards">
       <div class="lista-gifts">
         <label class="gift">
-          <input type="radio" name="gift" checked>
+          <input type="radio" name="gift" id="gift-antiga" checked>
           <div class="caixa">
-            <img src="assets/gift2.jpeg" alt="Gift Card Dark Code">
-            <h3>Das antiga</h3>
-            <p>Design Chad e minimalista, para homens de verdade.</p>
-            <span class="selecionado">Selecionado</span>
+            <img src="assets/gift2.jpeg" alt="Gift Clássico">
+            <div class="gift-texto">
+              <div>
+                <h3>Clássico</h3>
+                <p>Um reconhecimento digital, aprecie seu café.</p>
+              </div>
+              <span class="marcador"></span>
+            </div>
           </div>
         </label>
 
         <label class="gift">
-          <input type="radio" name="gift">
+          <input type="radio" name="gift" id="gift-vibe">
           <div class="caixa">
-            <img src="assets/gift1.jpeg" alt="Gift Card Dev Glow">
-            <h3>VibeCode</h3>
-            <p>Design coloridinho, igual um vibecoder.</p>
-            <span class="selecionado">Selecionado</span>
+            <img src="assets/gift1.jpeg" alt="Gift Bom trabalho">
+            <div class="gift-texto">
+              <div>
+                <h3>Bom Trabalho!</h3>
+                <p>Parabenize alguém pelo ótimo trabalho feito.</p>
+              </div>
+              <span class="marcador"></span>
+            </div>
           </div>
         </label>
       </div>
 
       <form class="caixa formulario">
         <h3>Enviar Gift Card</h3>
+        <p>Cartão escolhido:
+          <strong class="escolhido-antiga">Clássico</strong>
+          <strong class="escolhido-vibe">Bom trabalho</strong>
+        </p>
 
         <label for="tipo">Para quem é?</label>
-        <select id="tipo">
+        <select id="tipo" name="tipo">
           <option>Para um amigo</option>
-          <option>Para mim mesmo</option>
+          <option>Desejo me Presentear!</option>
         </select>
 
         <label for="nome">Nome</label>
-        <input type="text" id="nome" placeholder="Ex: Lucas" required>
+        <input type="text" id="nome" name="nome" placeholder="Ex: Lucas" required>
 
         <label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="amigo@email.com" required>
+        <input type="email" id="email" name="email" placeholder="amigo@email.com" required>
+
+        <div class="rotulo">Valor</div>
+        <div class="valores">
+          <label class="valor"><input type="radio" name="valor" value="25"><span>R$ 25</span></label>
+          <label class="valor"><input type="radio" name="valor" value="50" checked><span>R$ 50</span></label>
+          <label class="valor"><input type="radio" name="valor" value="100"><span>R$ 100</span></label>
+        </div>
 
         <label for="mensagem">Mensagem (opcional)</label>
-        <textarea id="mensagem" rows="3" placeholder="Um café pra te ajudar na sprint!"></textarea>
+        <textarea id="mensagem" name="mensagem" rows="3" placeholder="Um café pra te dar mais energia."></textarea>
 
         <button type="submit" class="botao">ENVIAR GIFT CARD</button>
       </form>
@@ -139,11 +163,9 @@
 
     <div class="caixa loja">
       <img src="assets/menu-design-coffee-shop-3d-illustration-of-a-bar-with-architectural-mockup-and-prominent-banner_9857056.jpg!w700wp.webp" alt="Foto da loja Great Coffee">
-
       <div class="loja-info">
         <h3>Great Coffee</h3>
         <p>Mesas grandes, tomada em todos os lugares, Wi-Fi rápido e ar-condicionado.</p>
-
         <p><strong>Endereço:</strong> Av. Central, 67 - Centro, Santa Rita do Sapucaí - MG</p>
         <p><strong>Horário:</strong> Seg a Sex 07h às 21h | Sáb e Dom 08h às 18h</p>
         <p><strong>Comodidades:</strong> Climatização e Wi-Fi </p>
@@ -151,14 +173,12 @@
     </div>
   </section>
 
-
   <footer>
     <div class="footer-conteudo">
       <div class="footer-logo">
         <img src="assets/5267474-cafe-grao-branco-icone-vetor-removebg-preview.png" alt="Logo Great Coffee">
         <p>Great Coffee - O café dos Desenvolvedores.</p>
       </div>
-
       <div class="footer-links">
         <a href="#home">Home</a>
         <a href="#cardapio">Cardápio</a>
@@ -166,7 +186,6 @@
         <a href="#loja">Loja</a>
       </div>
     </div>
-
     <p class="direitos">&copy; 2026 Great Coffee. Todos os direitos reservados.</p>
   </footer>
 
